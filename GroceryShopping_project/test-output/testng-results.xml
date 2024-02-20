@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-20T22:30:08 IST" name="Default suite" finished-at="2024-02-20T22:30:50 IST" duration-ms="42017">
+    <groups>
+    </groups>
+    <test started-at="2024-02-20T22:30:08 IST" name="Default test" finished-at="2024-02-20T22:30:50 IST" duration-ms="42017">
+      <class name="proj_package.Tests.Test1">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@51e69659]" started-at="2024-02-20T22:30:08 IST" name="launchBrowser" finished-at="2024-02-20T22:30:21 IST" duration-ms="13421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="test1()[pri:0, instance:proj_package.Tests.Test1@51e69659]" started-at="2024-02-20T22:30:21 IST" name="test1" description="verify if user search for a product in searchbar, user gets the appropiate results(product displayed after search should match/contains the string searched by user)" finished-at="2024-02-20T22:30:28 IST" duration-ms="7398" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@51e69659]" started-at="2024-02-20T22:30:28 IST" name="closeBrowser" finished-at="2024-02-20T22:30:29 IST" duration-ms="103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@51e69659]" started-at="2024-02-20T22:30:29 IST" name="launchBrowser" finished-at="2024-02-20T22:30:40 IST" duration-ms="11261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="test2()[pri:0, instance:proj_package.Tests.Test1@51e69659]" started-at="2024-02-20T22:30:40 IST" name="test2" description="Verify that if user search for wrong product or product which is not available he/she should get message[Sorry,no products matched your search!] stating that the searched product is not available." finished-at="2024-02-20T22:30:49 IST" duration-ms="9670" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@51e69659]" started-at="2024-02-20T22:30:49 IST" name="closeBrowser" finished-at="2024-02-20T22:30:50 IST" duration-ms="94" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- proj_package.Tests.Test1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
