@@ -13,64 +13,52 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class BaseTest {
-	
+
 	public WebDriver driver;
-	
-	
+
 	@Test
-	public WebDriver browserConfig() throws IOException
-	{		
-		
+	public WebDriver browserConfig() throws IOException {
+
 //		String url=null;
-		Properties props=new Properties();
-		
-		
-		FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"//src//main//java//proj_package//resources//Base_resource.properties");
-		
+		Properties props = new Properties();
+
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+				+ "//src//main//java//proj_package//resources//Base_resource.properties");
+
 		props.load(fis);
-		
-		String browsername=System.getProperty("browser")!=null ? System.getProperty("browser") : props.getProperty("browser");
-		
+
+		String browsername = System.getProperty("browser") != null ? System.getProperty("browser")
+				: props.getProperty("browser");
+
 //		url=props.getProperty(url);
-		switch(browsername)
-		{
+		switch (browsername) {
 		case "chrome":
-			driver=new ChromeDriver();
+			driver = new ChromeDriver();
 			break;
-			
+
 		case "firefox":
-			driver=new FirefoxDriver();
+			driver = new FirefoxDriver();
 			break;
-			
+
 		case "edge":
-			driver=new EdgeDriver();
+			driver = new EdgeDriver();
 			break;
-			
-			
 		}
-		
-		
+
 		return driver;
-		
-		
+
 	}
-	
+
 	@BeforeMethod
-	public void launchBrowser() throws IOException
-	{
-		driver=browserConfig();
+	public void launchBrowser() throws IOException {
+		driver = browserConfig();
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 	}
-	
+
 	@AfterMethod
-	public void closeBrowser()
-	{
+	public void closeBrowser() {
 		driver.quit();
 	}
-	
-	
-	
-	
 
 }

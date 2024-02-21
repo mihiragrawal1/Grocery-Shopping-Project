@@ -1,6 +1,7 @@
 package proj_package.Pages;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -10,62 +11,80 @@ import org.openqa.selenium.support.PageFactory;
 
 import proj_package.Utilities.WaitUtility;
 
-public class HomePage extends WaitUtility{
-	
-	
-	
+public class HomePage extends WaitUtility {
+
 	WebDriver driver;
-	
-	public HomePage(WebDriver driver)
-	{
+
+	public HomePage(WebDriver driver) {
 		super(driver);
-		this.driver=driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	
-	@FindBy(xpath="//div[@class='no-results'] //h2")
+	@FindBy(xpath = "//div[@class='no-results'] //h2")
 	WebElement noProductAvailableMsgElement;
-	
-	@FindBy(xpath="//input[@type='search']")
+
+	@FindBy(xpath = "//input[@type='search']")
 	WebElement searchBox;
-	
-	@FindBy(xpath="//h4[@class='product-name']")
+
+	@FindBy(xpath = "//h4[@class='product-name']")
 	List<WebElement> productsList;
-	
-	@FindBy(xpath="//div[@class='product-action'] //button")
+
+	@FindBy(xpath = "//div[@class='product-action'] //button")
 	List<WebElement> addToCartButtonLocator;
-	
-	
-	
-	public void searchItem(String itemname) {	
-		
+
+	public void searchItem(String itemname) {
+
 		waitForElement(searchBox);
 		searchBox.sendKeys(itemname);
-	
+
 	}
-	
-	
-	public List<WebElement> getListOfProducts()
-	{     
+
+	public List<WebElement> getListOfProducts() {
 		try {
-		waitForElements(productsList);
-		return productsList;
-		}
-		catch(Exception e){
-			
+			waitForElements(productsList);
+			return productsList;
+		} catch (Exception e) {
+
 			return new ArrayList<>();
 		}
-		
+
 	}
-	
-	public String noProductAvailableErrorMsg()
-	{
+
+	public String noProductAvailableErrorMsg() {
 		waitForElement(noProductAvailableMsgElement);
-		String msg=noProductAvailableMsgElement.getText();
+		String msg = noProductAvailableMsgElement.getText();
 		return msg;
 	}
-	
-	
-	
+
+	public void addProductToCart(String[] productToBuy) {
+		waitForElements(productsList);
+		System.out.println(productsList);
+		for(int i=0;i<productsList.size();i++)
+		{
+			String[] productFullName=productsList.get(i).getText().split("-");
+			String productName=productFullName[0].trim();
+//			System.out.println(productName + "===");
+			for(int j=0;j<productToBuy.length;j++)
+			{
+//				System.out.println(productToBuy[j]);
+				if(productName.toLowerCase().contains(productToBuy[j]))
+				{
+					addToCartButtonLocator.get(i).click();
+				}
+			}
+		}
+//		List<String> desiredProducts = new ArrayList<>(Arrays.asList(productToBuy));
+//		for (int i = 0; i < productsList.size(); i++) {
+//			String[] fullNameOfProduct = productsList.get(i).getText().split("-");
+//			String pro_name = fullNameOfProduct[0].trim();
+//		
+//
+//			if (desiredProducts.contains(pro_name.toLowerCase())) {
+//				addToCartButtonLocator.get(i).click();
+//			}
+//		}
+
+	}
+
 }

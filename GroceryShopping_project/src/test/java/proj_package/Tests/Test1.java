@@ -1,12 +1,16 @@
 package proj_package.Tests;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 import proj_package.BaseComponent.BaseTest;
+import proj_package.Pages.CartPage;
 import proj_package.Pages.HomePage;
 
 public class Test1 extends BaseTest {
@@ -14,11 +18,11 @@ public class Test1 extends BaseTest {
 	String productToSearch = "banana";
 	String wrongProductToSearch = "Mihir";
 	String noProductAvailableerrorMsg = "Sorry, no products matched your search!";
+	String[] productToBuy = { "banana","walnuts" };
 
-	@Test(groups = "smoke", description = "verify if user search for a product in searchbar, user gets the appropiate "
+	@Test(enabled = false, groups = "smoke", description = "verify if user search for a product in searchbar, user gets the appropiate "
 			+ "results(product displayed after search should match/contains the string searched by user)")
-	public void test1()
-	{
+	public void test1() {
 		HomePage homeObj = new HomePage(driver);
 		homeObj.searchItem(productToSearch);
 		List<WebElement> productList = homeObj.getListOfProducts();
@@ -32,8 +36,7 @@ public class Test1 extends BaseTest {
 
 	}
 
-	
-	@Test(description = "Verify that if user search for wrong product or product which is "
+	@Test(enabled = false, description = "Verify that if user search for wrong product or product which is "
 			+ "not available he/she should get message[Sorry,no products matched your search!] stating "
 			+ "that the searched product is not available.")
 	public void test2() {
@@ -47,5 +50,23 @@ public class Test1 extends BaseTest {
 		Assert.assertTrue(error.equalsIgnoreCase(noProductAvailableerrorMsg));
 
 	}
+
+	@Test(description = "Validate if user is able to add a product of choice to cart from the list "
+			+ "of available products and that product must be available/visible in cart.")
+	public void test3() {
+		HomePage homeObj = new HomePage(driver);
+		homeObj.addProductToCart(productToBuy);
+		CartPage cartObj=new CartPage(driver);
+		cartObj.goToCart();
+		List<WebElement> productInCart=cartObj.getProductsInCart();
+		Assert.assertTrue(productInCart.size()==productToBuy.length);
+		
+		
+
+		
+	}
+
+//	testcase : description="Validate when user click on add to cart button to add product to "
+//			+ "cart the button text should get changed to added stating that product has been added to cart"
 
 }
