@@ -59,7 +59,7 @@ public class HomePage extends WaitUtility {
 
 	public void addProductToCart(String[] productToBuy) {
 		waitForElements(productsList);
-		System.out.println(productsList);
+//		System.out.println(productsList);
 		for(int i=0;i<productsList.size();i++)
 		{
 			String[] productFullName=productsList.get(i).getText().split("-");
