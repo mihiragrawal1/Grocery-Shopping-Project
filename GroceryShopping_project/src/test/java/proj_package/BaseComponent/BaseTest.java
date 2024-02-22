@@ -1,5 +1,7 @@
 package proj_package.BaseComponent;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -31,7 +33,7 @@ public class BaseTest {
 				: props.getProperty("browser");
 
 //		url=props.getProperty(url);
-		switch (browsername) {
+		switch (browsername.toLowerCase()) {
 		case "chrome":
 			driver = new ChromeDriver();
 			break;

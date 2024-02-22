@@ -57,7 +57,8 @@ public class HomePage extends WaitUtility {
 		return msg;
 	}
 
-	public void addProductToCart(String[] productToBuy) {
+	public String addProductToCart(String[] productToBuy) {
+		String btnText = null;
 		waitForElements(productsList);
 //		System.out.println(productsList);
 		for(int i=0;i<productsList.size();i++)
@@ -68,22 +69,16 @@ public class HomePage extends WaitUtility {
 			for(int j=0;j<productToBuy.length;j++)
 			{
 //				System.out.println(productToBuy[j]);
-				if(productName.toLowerCase().contains(productToBuy[j]))
+				if(productName.toLowerCase().contains(productToBuy[j].toLowerCase()))
 				{
 					addToCartButtonLocator.get(i).click();
+					btnText=addToCartButtonLocator.get(i).getText();
+					System.out.println(btnText);
 				}
 			}
 		}
-//		List<String> desiredProducts = new ArrayList<>(Arrays.asList(productToBuy));
-//		for (int i = 0; i < productsList.size(); i++) {
-//			String[] fullNameOfProduct = productsList.get(i).getText().split("-");
-//			String pro_name = fullNameOfProduct[0].trim();
-//		
-//
-//			if (desiredProducts.contains(pro_name.toLowerCase())) {
-//				addToCartButtonLocator.get(i).click();
-//			}
-//		}
+		return btnText;
+
 
 	}
 
