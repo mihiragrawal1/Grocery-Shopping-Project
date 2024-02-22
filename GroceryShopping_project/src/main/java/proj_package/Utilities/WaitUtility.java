@@ -26,7 +26,7 @@ public class WaitUtility {
 	}
 	
 
-	public void waitForElements(List<WebElement> productsList)
+	public void waitForListElements(List<WebElement> productsList)
 	{
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(8));
 		wait.until(ExpectedConditions.visibilityOfAllElements(productsList));

@@ -42,7 +42,8 @@ public class HomePage extends WaitUtility {
 
 	public List<WebElement> getListOfProducts() {
 		try {
-			waitForElements(productsList);
+			Thread.sleep(2000);
+			waitForListElements(productsList);
 			return productsList;
 		} catch (Exception e) {
 
@@ -57,9 +58,9 @@ public class HomePage extends WaitUtility {
 		return msg;
 	}
 
-	public String addProductToCart(String[] productToBuy) {
+	public void addProductToCart(String[] productToBuy) {
 		String btnText = null;
-		waitForElements(productsList);
+		waitForListElements(productsList);
 //		System.out.println(productsList);
 		for(int i=0;i<productsList.size();i++)
 		{
@@ -77,7 +78,7 @@ public class HomePage extends WaitUtility {
 				}
 			}
 		}
-		return btnText;
+//		return btnText;
 
 
 	}

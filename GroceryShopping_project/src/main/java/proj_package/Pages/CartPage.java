@@ -45,7 +45,7 @@ public class CartPage extends WaitUtility{
 	
 		
 		try {
-		waitForElements(productsListInCart);
+			waitForListElements(productsListInCart);
 		
 		return productsListInCart;
 		}
