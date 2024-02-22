@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -119,6 +119,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="proj_package.Tests.Test1" class="method navigator-link" hash-for-method="test4">test4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="proj_package.Tests.Test1" class="method navigator-link" hash-for-method="test5">test5</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -175,12 +180,21 @@
 (validate if user can search for a specific product and add it to cart also verify that searched product added to cart are actually available/visible in cart)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test5">
+                  </a> <!-- test5 -->
+                  <span class="method-name">test5</span>
+                  <em>
+(Validate when user click on add to cart button to add product to cart the button text should get changed to added stating that product has been succesfully added to cart)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/z5/rdsf_4ld3j5fwc5szwtmrdg00000gp/T/testng-eclipse-1269094309/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/z5/rdsf_4ld3j5fwc5szwtmrdg00000gp/T/testng-eclipse-635980913/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -237,28 +251,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test3')
+data.setCell(0, 1, 'test2')
 data.setCell(0, 2, 'proj_package.Tests.Test1')
-data.setCell(0, 3, 11227);
+data.setCell(0, 3, 11819);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test2')
+data.setCell(1, 1, 'test3')
 data.setCell(1, 2, 'proj_package.Tests.Test1')
-data.setCell(1, 3, 9827);
+data.setCell(1, 3, 11088);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'test1')
 data.setCell(2, 2, 'proj_package.Tests.Test1')
-data.setCell(2, 3, 8775);
+data.setCell(2, 3, 7509);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'test4')
 data.setCell(3, 2, 'proj_package.Tests.Test1')
-data.setCell(3, 3, 7441);
+data.setCell(3, 3, 6954);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test5')
+data.setCell(4, 2, 'proj_package.Tests.Test1')
+data.setCell(4, 3, 4128);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 37 seconds</span>
+              <span class="suite-total-time">Total running time: 41 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -291,47 +309,59 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test1</span>
-                <span class="method-start">12007 ms</span>
+                <span class="method-start">10384 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">20790 ms</span>
+                <span class="method-start">17905 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchBrowser</span>
-                <span class="method-start">20898 ms</span>
+                <span class="method-start">18013 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test2</span>
-                <span class="method-start">29554 ms</span>
+                <span class="method-start">26031 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">39385 ms</span>
+                <span class="method-start">37861 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchBrowser</span>
-                <span class="method-start">39481 ms</span>
+                <span class="method-start">37961 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test3</span>
-                <span class="method-start">50637 ms</span>
+                <span class="method-start">46025 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">61873 ms</span>
+                <span class="method-start">57123 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchBrowser</span>
-                <span class="method-start">61963 ms</span>
+                <span class="method-start">57230 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test4</span>
-                <span class="method-start">70092 ms</span>
+                <span class="method-start">67375 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">77536 ms</span>
+                <span class="method-start">74330 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchBrowser</span>
+                <span class="method-start">74419 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test5</span>
+                <span class="method-start">82492 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">86626 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

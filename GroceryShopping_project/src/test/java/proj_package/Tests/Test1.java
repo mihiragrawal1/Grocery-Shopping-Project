@@ -38,7 +38,7 @@ public class Test1 extends BaseTest {
 
 	@Test(groups = "smoke", description = "verify if user search for a product in searchbar, user gets the appropiate "
 			+ "results(product displayed after search should match/contains the string searched by user)")
-	public void test1()  {
+	public void test1() {
 		HomePage homeObj = new HomePage(driver);
 		homeObj.searchItem(productToSearch);
 
@@ -63,7 +63,7 @@ public class Test1 extends BaseTest {
 		homeObj.searchItem(wrongProductToSearch);
 		List<WebElement> productList = homeObj.getListOfProducts();
 		System.out.println(productList);
-		AssertJUnit.assertTrue(productList.isEmpty());
+		Assert.assertTrue(productList.isEmpty());
 		String error = homeObj.noProductAvailableErrorMsg();
 		System.out.println(error);
 		Assert.assertTrue(error.equalsIgnoreCase(noProductAvailableerrorMsg));
@@ -99,10 +99,10 @@ public class Test1 extends BaseTest {
 
 	@Test(description = "validate if user can search for a specific product and add it to cart "
 			+ "also verify that searched product added to cart are actually available/visible in cart")
-	public void test4()  {
+	public void test4() {
 		HomePage homeObj = new HomePage(driver);
 		homeObj.searchItem(productToSearch);
-		
+
 		List<WebElement> visibleProduct = homeObj.getListOfProducts();
 
 		System.out.println(visibleProduct);
@@ -136,42 +136,20 @@ public class Test1 extends BaseTest {
 
 		}
 
-//		
-//		String[] searchedProductToBuy = { productToSearch };
-//		String[] lowerCaseArray=convertArrayToLowercase(searchedProductToBuy);
-//		homeObj.addProductToCart(lowerCaseArray);
-//		CartPage cartObj = new CartPage(driver);
-//		cartObj.goToCart();
-//		List<WebElement> productInCart = cartObj.getProductsInCart(); // validating that searched product added to cart
-//																	 // are actually available/visible in cart
-//		List<String> productName = new ArrayList<String>();
-//		for (int i = 0; i < productInCart.size(); i++) {
-//			String[] FullProductName = productInCart.get(i).getText().split("-");
-//			productName.add(FullProductName[0].trim().toLowerCase());
-//		}
-////		System.out.println(productName);
-//		Collections.sort(productName);
-////		System.out.println(productName);
-//		List<String> list = new ArrayList<>(Arrays.asList(searchedProductToBuy));
-//		Collections.sort(list);
-////		System.out.println(list);
-//		Assert.assertEqualsNoOrder(productName, list);
-//		Assert.assertEquals(productName.size(), list.size());
 	}
 
-//	@Test(description="Validate when user click on add to cart button to add product to "
-//			+"cart the button text should get changed to added stating that product has been succesfully added to cart")
-//	public void test5()
-//	{
-//		HomePage homeObj = new HomePage(driver);
-//		String[] productToBuy = {buySingleProduct};
-//		String [] lowerCaseArray=convertArrayToLowercase(productToBuy);
-//		
-//		String btnText=homeObj.addProductToCart(lowerCaseArray);
-//		System.out.println(btnText);
-//		String[] fullButtonText=btnText.split(" ");
-//		
-//		AssertJUnit.assertEquals(fullButtonText[1].toLowerCase(),addToCartBtnTextAfterClick.toLowerCase());
-//	}
+	@Test(description = "Validate when user click on add to cart button to add product to "
+			+ "cart the button text should get changed to added stating that product has been succesfully added to cart")
+	public void test5() {
+		HomePage homeObj = new HomePage(driver);
+		String[] productToBuy = { buySingleProduct };
+		String[] lowerCaseArray = convertArrayToLowercase(productToBuy);
+
+		String btnText = homeObj.addProductToCart(lowerCaseArray);
+		System.out.println(btnText + "full btn text===");
+		String[] fullButtonText = btnText.split(" ");
+		System.out.println(fullButtonText[1].toLowerCase());
+		Assert.assertEquals(fullButtonText[1].toLowerCase(), addToCartBtnTextAfterClick.toLowerCase());
+	}
 
 }

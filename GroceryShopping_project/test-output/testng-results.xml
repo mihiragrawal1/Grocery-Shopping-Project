@@ -1,60 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-22T22:19:29 IST" name="Default suite" finished-at="2024-02-22T22:20:47 IST" duration-ms="77787">
+  <suite started-at="2024-02-22T23:15:25 IST" name="Default suite" finished-at="2024-02-22T23:16:51 IST" duration-ms="86839">
     <groups>
       <group name="smoke">
-        <method signature="Test1.test1()[pri:0, instance:proj_package.Tests.Test1@61001b64]" name="test1" class="proj_package.Tests.Test1"/>
+        <method signature="Test1.test1()[pri:0, instance:proj_package.Tests.Test1@4310d43]" name="test1" class="proj_package.Tests.Test1"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-02-22T22:19:29 IST" name="Default test" finished-at="2024-02-22T22:20:47 IST" duration-ms="77787">
+    <test started-at="2024-02-22T23:15:25 IST" name="Default test" finished-at="2024-02-22T23:16:51 IST" duration-ms="86839">
       <class name="proj_package.Tests.Test1">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:19:29 IST" name="launchBrowser" finished-at="2024-02-22T22:19:41 IST" duration-ms="12005" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:15:25 IST" name="launchBrowser" finished-at="2024-02-22T23:15:35 IST" duration-ms="10380" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="test1()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:19:41 IST" name="test1" description="verify if user search for a product in searchbar, user gets the appropiate results(product displayed after search should match/contains the string searched by user)" finished-at="2024-02-22T22:19:50 IST" duration-ms="8775" status="PASS">
+        <test-method signature="test1()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:15:35 IST" name="test1" description="verify if user search for a product in searchbar, user gets the appropiate results(product displayed after search should match/contains the string searched by user)" finished-at="2024-02-22T23:15:43 IST" duration-ms="7509" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:19:50 IST" name="closeBrowser" finished-at="2024-02-22T22:19:50 IST" duration-ms="104" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:15:43 IST" name="closeBrowser" finished-at="2024-02-22T23:15:43 IST" duration-ms="104" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:19:50 IST" name="launchBrowser" finished-at="2024-02-22T22:19:59 IST" duration-ms="8656" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:15:43 IST" name="launchBrowser" finished-at="2024-02-22T23:15:51 IST" duration-ms="8017" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="test2()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:19:59 IST" name="test2" description="Verify that if user search for wrong product or product which is not available he/she should get message[Sorry,no products matched your search!] stating that the searched product is not available." finished-at="2024-02-22T22:20:09 IST" duration-ms="9827" status="PASS">
+        <test-method signature="test2()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:15:51 IST" name="test2" description="Verify that if user search for wrong product or product which is not available he/she should get message[Sorry,no products matched your search!] stating that the searched product is not available." finished-at="2024-02-22T23:16:03 IST" duration-ms="11819" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:20:09 IST" name="closeBrowser" finished-at="2024-02-22T22:20:09 IST" duration-ms="95" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:03 IST" name="closeBrowser" finished-at="2024-02-22T23:16:03 IST" duration-ms="99" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:20:09 IST" name="launchBrowser" finished-at="2024-02-22T22:20:20 IST" duration-ms="11155" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:03 IST" name="launchBrowser" finished-at="2024-02-22T23:16:11 IST" duration-ms="8063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="test3()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:20:20 IST" name="test3" description="Validate if user is able to add a product of choice to cart from the list of available products on dashboard/homepage and that product must be available/visible in cart." finished-at="2024-02-22T22:20:31 IST" duration-ms="11227" status="PASS">
+        <test-method signature="test3()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:11 IST" name="test3" description="Validate if user is able to add a product of choice to cart from the list of available products on dashboard/homepage and that product must be available/visible in cart." finished-at="2024-02-22T23:16:22 IST" duration-ms="11088" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test3 -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:20:31 IST" name="closeBrowser" finished-at="2024-02-22T22:20:31 IST" duration-ms="88" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:22 IST" name="closeBrowser" finished-at="2024-02-22T23:16:22 IST" duration-ms="105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:20:31 IST" name="launchBrowser" finished-at="2024-02-22T22:20:39 IST" duration-ms="8129" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:22 IST" name="launchBrowser" finished-at="2024-02-22T23:16:32 IST" duration-ms="10144" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="test4()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:20:39 IST" name="test4" description="validate if user can search for a specific product and add it to cart also verify that searched product added to cart are actually available/visible in cart" finished-at="2024-02-22T22:20:47 IST" duration-ms="7441" status="PASS">
+        <test-method signature="test4()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:32 IST" name="test4" description="validate if user can search for a specific product and add it to cart also verify that searched product added to cart are actually available/visible in cart" finished-at="2024-02-22T23:16:39 IST" duration-ms="6954" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test4 -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@61001b64]" started-at="2024-02-22T22:20:47 IST" name="closeBrowser" finished-at="2024-02-22T22:20:47 IST" duration-ms="150" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:39 IST" name="closeBrowser" finished-at="2024-02-22T23:16:39 IST" duration-ms="88" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:39 IST" name="launchBrowser" finished-at="2024-02-22T23:16:47 IST" duration-ms="8072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="test5()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:47 IST" name="test5" description="Validate when user click on add to cart button to add product to cart the button text should get changed to added stating that product has been succesfully added to cart" finished-at="2024-02-22T23:16:51 IST" duration-ms="4128" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test5 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.Test1@4310d43]" started-at="2024-02-22T23:16:51 IST" name="closeBrowser" finished-at="2024-02-22T23:16:51 IST" duration-ms="145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

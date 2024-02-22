@@ -58,7 +58,7 @@ public class HomePage extends WaitUtility {
 		return msg;
 	}
 
-	public void addProductToCart(String[] productToBuy) {
+	public String addProductToCart(String[] productToBuy) {
 		String btnText = null;
 		waitForListElements(productsList);
 //		System.out.println(productsList);
@@ -78,7 +78,7 @@ public class HomePage extends WaitUtility {
 				}
 			}
 		}
-//		return btnText;
+		return btnText;
 
 
 	}
