@@ -5,8 +5,7 @@
     <classes>
       <class name="proj_package.Tests.Test1">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="text4"/>
+          <include name="test6"/>
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- proj_package.Tests.Test1 -->

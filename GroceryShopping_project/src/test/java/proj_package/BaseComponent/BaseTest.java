@@ -18,7 +18,7 @@ public class BaseTest {
 
 	public WebDriver driver;
 
-	@Test
+	
 	public WebDriver browserConfig() throws IOException {
 
 //		String url=null;

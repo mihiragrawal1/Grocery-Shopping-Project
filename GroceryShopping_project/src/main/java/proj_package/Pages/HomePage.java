@@ -1,7 +1,6 @@
 package proj_package.Pages;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -82,5 +81,7 @@ public class HomePage extends WaitUtility {
 
 
 	}
+	
+
 
 }

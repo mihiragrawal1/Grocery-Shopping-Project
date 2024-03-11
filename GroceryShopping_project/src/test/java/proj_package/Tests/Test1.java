@@ -24,10 +24,11 @@ public class Test1 extends BaseTest {
 	String productToSearch = "Banana";
 	String wrongProductToSearch = "Mihir";
 	String noProductAvailableerrorMsg = "Sorry, no products matched your search!";
-	String[] productToBuy = { "Walnuts", "Banana", "beetroot" };
+	String[] productToBuy = { "Walnuts", "Banana" ,"beetroot","cucumber"};
 	String buySingleProduct = "Carrot";
 	String addToCartBtnTextAfterClick = "ADDED";
-
+	String[] removeProductFromCart= {"beetroot"};
+	String[] finalItemList= { "Walnuts", "Banana","cucumber"};
 	public String[] convertArrayToLowercase(String[] arr) {
 		String[] lowercaseArray = new String[arr.length];
 		for (int i = 0; i < arr.length; i++) {
@@ -142,6 +143,7 @@ public class Test1 extends BaseTest {
 			+ "cart the button text should get changed to added stating that product has been succesfully added to cart")
 	public void test5() {
 		HomePage homeObj = new HomePage(driver);
+	
 		String[] productToBuy = { buySingleProduct };
 		String[] lowerCaseArray = convertArrayToLowercase(productToBuy);
 
@@ -151,5 +153,41 @@ public class Test1 extends BaseTest {
 		System.out.println(fullButtonText[1].toLowerCase());
 		Assert.assertEquals(fullButtonText[1].toLowerCase(), addToCartBtnTextAfterClick.toLowerCase());
 	}
+	
+	
+	
+	//user should be able to remove product from cart if added by mistake
+	@Test(description="Validate if user can remove the product from cart after adding")
+	public void test6() throws InterruptedException {
+		HomePage homeObj = new HomePage(driver);
+		String[] lowerCaseArray = convertArrayToLowercase(productToBuy);
+		homeObj.addProductToCart(lowerCaseArray);
+		CartPage cartObj=new CartPage(driver);
+		cartObj.goToCart();
+		List<WebElement> itemInCart=cartObj.getProductsInCart();
+		System.out.print(itemInCart.size());
+		cartObj.removeItemFromCart(itemInCart,removeProductFromCart);
+		Thread.sleep(2000);
+		List<WebElement> finalItemInCart=cartObj.getProductsInCart();
+		List<String> finalProducts=new ArrayList<>();
+		for(int i=0;i<finalItemInCart.size();i++)
+		{
+			String[] itemName=finalItemInCart.get(i).getText().split(" ");
+			finalProducts.add(itemName[0].trim().toLowerCase());
+			
+			
+		}
+		System.out.println(finalProducts);
+		Collections.sort(finalProducts);
+		List<String> itemsFinal=new ArrayList<>(Arrays.asList(convertArrayToLowercase(finalItemList)));
+		Collections.sort(itemsFinal);
+		Assert.assertEqualsNoOrder(finalProducts,itemsFinal);
+		System.out.println(finalProducts.size());
+		System.out.println(itemsFinal.size());
+		Assert.assertEquals(finalProducts.size(), itemsFinal.size());
+		
+		
+	}
+	//e2e product buy
 
 }
