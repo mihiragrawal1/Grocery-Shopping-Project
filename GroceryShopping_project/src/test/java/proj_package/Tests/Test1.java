@@ -158,7 +158,7 @@ public class Test1 extends BaseTest {
 	
 	//user should be able to remove product from cart if added by mistake
 	@Test(description="Validate if user can remove the product from cart after adding")
-	public void test6() throws InterruptedException {
+ 	public void test6() throws InterruptedException {      //new test
 		HomePage homeObj = new HomePage(driver);
 		String[] lowerCaseArray = convertArrayToLowercase(productToBuy);
 		homeObj.addProductToCart(lowerCaseArray);
