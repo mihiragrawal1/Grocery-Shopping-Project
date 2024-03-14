@@ -2,20 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-11T22:08:05 IST" name="Default suite" finished-at="2024-03-11T22:08:39 IST" duration-ms="33381">
+  <suite started-at="2024-03-13T13:35:03 IST" name="Default suite" finished-at="2024-03-13T13:35:43 IST" duration-ms="40256">
     <groups>
     </groups>
-    <test started-at="2024-03-11T22:08:05 IST" name="Default test" finished-at="2024-03-11T22:08:39 IST" duration-ms="33381">
-      <class name="proj_package.Tests.Test1">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.Test1@201a4587]" started-at="2024-03-11T22:08:05 IST" name="launchBrowser" finished-at="2024-03-11T22:08:17 IST" duration-ms="12135" status="PASS">
+    <test started-at="2024-03-13T13:35:03 IST" name="Default test" finished-at="2024-03-13T13:35:43 IST" duration-ms="40256">
+      <class name="proj_package.Tests.E2E_Test">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:proj_package.Tests.E2E_Test@428640fa]" started-at="2024-03-13T13:35:03 IST" name="launchBrowser" finished-at="2024-03-13T13:35:19 IST" duration-ms="16136" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="test6()[pri:0, instance:proj_package.Tests.Test1@201a4587]" started-at="2024-03-11T22:08:17 IST" name="test6" description="Validate if user can remove the product from cart after adding" finished-at="2024-03-11T22:08:38 IST" duration-ms="21096" status="PASS">
+        <test-method signature="allModuleIntegrationTest_E2E()[pri:0, instance:proj_package.Tests.E2E_Test@428640fa]" started-at="2024-03-13T13:35:19 IST" name="allModuleIntegrationTest_E2E" finished-at="2024-03-13T13:35:43 IST" duration-ms="23858" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test6 -->
-      </class> <!-- proj_package.Tests.Test1 -->
+        </test-method> <!-- allModuleIntegrationTest_E2E -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:proj_package.Tests.E2E_Test@428640fa]" started-at="2024-03-13T13:35:43 IST" name="closeBrowser" finished-at="2024-03-13T13:35:43 IST" duration-ms="161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- proj_package.Tests.E2E_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

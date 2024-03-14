@@ -17,18 +17,22 @@ import org.testng.annotations.Test;
 
 import proj_package.BaseComponent.BaseTest;
 import proj_package.Pages.CartPage;
+import proj_package.Pages.CheckoutPage;
 import proj_package.Pages.HomePage;
+import proj_package.Pages.OrderConfirmationPage;
 
 public class Test1 extends BaseTest {
 
+	String Country = "India";
 	String productToSearch = "Banana";
 	String wrongProductToSearch = "Mihir";
 	String noProductAvailableerrorMsg = "Sorry, no products matched your search!";
-	String[] productToBuy = { "Walnuts", "Banana" ,"beetroot","cucumber"};
+	String[] productToBuy = { "Walnuts", "Banana", "beetroot", "cucumber" };
 	String buySingleProduct = "Carrot";
 	String addToCartBtnTextAfterClick = "ADDED";
-	String[] removeProductFromCart= {"beetroot"};
-	String[] finalItemList= { "Walnuts", "Banana","cucumber"};
+	String[] removeProductFromCart = { "beetroot" };
+	String[] finalItemList = { "Walnuts", "Banana", "cucumber" };
+
 	public String[] convertArrayToLowercase(String[] arr) {
 		String[] lowercaseArray = new String[arr.length];
 		for (int i = 0; i < arr.length; i++) {
@@ -37,7 +41,7 @@ public class Test1 extends BaseTest {
 		return lowercaseArray;
 	}
 
-	@Test(groups = "smoke", description = "verify if user search for a product in searchbar, user gets the appropiate "
+	@Test( groups = "smoke", description = "verify if user search for a product in searchbar, user gets the appropiate "
 			+ "results(product displayed after search should match/contains the string searched by user)")
 	public void test1() {
 		HomePage homeObj = new HomePage(driver);
@@ -50,13 +54,12 @@ public class Test1 extends BaseTest {
 			String[] product = pro.getText().split("-");
 			String productName = product[0].trim();
 			System.out.println(productName);
-
 			Assert.assertTrue(productName.toLowerCase().contains(productToSearch.toLowerCase()));
 		}
 
 	}
 
-	@Test(description = "Verify that if user search for wrong product or product which is "
+	@Test( description = "Verify that if user search for wrong product or product which is "
 			+ "not available he/she should get message[Sorry,no products matched your search!] stating "
 			+ "that the searched product is not available.")
 	public void test2() {
@@ -71,7 +74,7 @@ public class Test1 extends BaseTest {
 
 	}
 
-	@Test(description = "Validate if user is able to add a product of choice to cart from the list "
+	@Test(groups="smoke", description = "Validate if user is able to add a product of choice to cart from the list "
 			+ "of available products on dashboard/homepage and that product must be available/visible in cart.")
 	public void test3() {
 		HomePage homeObj = new HomePage(driver);
@@ -98,7 +101,7 @@ public class Test1 extends BaseTest {
 
 	}
 
-	@Test(description = "validate if user can search for a specific product and add it to cart "
+	@Test( description = "validate if user can search for a specific product and add it to cart "
 			+ "also verify that searched product added to cart are actually available/visible in cart")
 	public void test4() {
 		HomePage homeObj = new HomePage(driver);
@@ -139,11 +142,11 @@ public class Test1 extends BaseTest {
 
 	}
 
-	@Test(description = "Validate when user click on add to cart button to add product to "
+	@Test(groups="smoke",description = "Validate when user click on add to cart button to add product to "
 			+ "cart the button text should get changed to added stating that product has been succesfully added to cart")
 	public void test5() {
 		HomePage homeObj = new HomePage(driver);
-	
+
 		String[] productToBuy = { buySingleProduct };
 		String[] lowerCaseArray = convertArrayToLowercase(productToBuy);
 
@@ -153,41 +156,36 @@ public class Test1 extends BaseTest {
 		System.out.println(fullButtonText[1].toLowerCase());
 		Assert.assertEquals(fullButtonText[1].toLowerCase(), addToCartBtnTextAfterClick.toLowerCase());
 	}
-	
-	
-	
-	//user should be able to remove product from cart if added by mistake
-	@Test(description="Validate if user can remove the product from cart after adding")
- 	public void test6() throws InterruptedException {      //new test
+
+	// user should be able to remove product from cart if added by mistake
+	@Test(groups="smoke", description = "Validate if user can remove the product from cart after adding")
+	public void test6() throws InterruptedException { // new test
 		HomePage homeObj = new HomePage(driver);
 		String[] lowerCaseArray = convertArrayToLowercase(productToBuy);
 		homeObj.addProductToCart(lowerCaseArray);
-		CartPage cartObj=new CartPage(driver);
+		CartPage cartObj = new CartPage(driver);
 		cartObj.goToCart();
-		List<WebElement> itemInCart=cartObj.getProductsInCart();
+		List<WebElement> itemInCart = cartObj.getProductsInCart();
 		System.out.print(itemInCart.size());
-		cartObj.removeItemFromCart(itemInCart,removeProductFromCart);
+		cartObj.removeItemFromCart(itemInCart, removeProductFromCart);
 		Thread.sleep(2000);
-		List<WebElement> finalItemInCart=cartObj.getProductsInCart();
-		List<String> finalProducts=new ArrayList<>();
-		for(int i=0;i<finalItemInCart.size();i++)
-		{
-			String[] itemName=finalItemInCart.get(i).getText().split(" ");
+		List<WebElement> finalItemInCart = cartObj.getProductsInCart();
+		List<String> finalProducts = new ArrayList<>();
+		for (int i = 0; i < finalItemInCart.size(); i++) {
+			String[] itemName = finalItemInCart.get(i).getText().split(" ");
 			finalProducts.add(itemName[0].trim().toLowerCase());
-			
-			
+
 		}
 		System.out.println(finalProducts);
 		Collections.sort(finalProducts);
-		List<String> itemsFinal=new ArrayList<>(Arrays.asList(convertArrayToLowercase(finalItemList)));
+		List<String> itemsFinal = new ArrayList<>(Arrays.asList(convertArrayToLowercase(finalItemList)));
 		Collections.sort(itemsFinal);
-		Assert.assertEqualsNoOrder(finalProducts,itemsFinal);
+		Assert.assertEqualsNoOrder(finalProducts, itemsFinal);
 		System.out.println(finalProducts.size());
 		System.out.println(itemsFinal.size());
 		Assert.assertEquals(finalProducts.size(), itemsFinal.size());
-		
-		
-	}
-	//e2e product buy
 
+	}
+
+	
 }

@@ -33,6 +33,9 @@ public class CartPage extends WaitUtility {
 	@FindBy(xpath = "//div[@class='cart-preview active'] //p[@class='product-name']")
 	List<WebElement> productsListInCart;
 
+	@FindBy(xpath = "//button[text()='Place Order']")
+	WebElement placeOrderBtn;
+
 	public void goToCart() {
 		waitForElement(cartButton);
 		cartButton.click();
@@ -49,19 +52,30 @@ public class CartPage extends WaitUtility {
 		}
 	}
 
-	
 	public void removeItemFromCart(List<WebElement> inCartItem, String[] itemToRemove) {
 
 		for (int i = 0; i < inCartItem.size(); i++) {
 			for (int j = 0; j < itemToRemove.length; j++) {
 
 				String[] itemName = inCartItem.get(i).getText().split("-");
-				
-				if(itemName[0].trim().toLowerCase().contains(itemToRemove[j].toLowerCase())) {
+
+				if (itemName[0].trim().toLowerCase().contains(itemToRemove[j].toLowerCase())) {
 					removeBtn.get(i).click();
 				}
 			}
 		}
+	}
+
+	public void clickProceedToCheckout() {
+		waitForElement(proceedToCheckoutButton);
+		proceedToCheckoutButton.click();
+		
+	}
+	
+	public void clickPlaceOrderBtn()
+	{
+		waitForElement(placeOrderBtn);
+		placeOrderBtn.click();
 	}
 
 }

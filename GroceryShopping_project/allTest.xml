@@ -10,6 +10,7 @@
     <classes>
       <class name="proj_package.BaseComponent.BaseTest"/>
       <class name="proj_package.Tests.Test1"/>
+      <class name="proj_package.Tests.E2E_Test"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
